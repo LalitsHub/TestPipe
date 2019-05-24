@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9880E671-0FFE-44D7-BC0F-623FC2448BEE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AgVueAutomation</RootNamespace>
+    <AssemblyName>AgVueAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AgVueAutomation.driverscript</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.14.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.14.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="driverscript.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="lib\databaseLib.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="lib\generalLib.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="lib\initializeTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="lib\resultUtil.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="pages\ACHCreditRequest.cs" />
+    <Compile Include="pages\BASECreditRequest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="pages\AGCCreditRequest.cs" />
+    <Compile Include="pages\FCFCreditRequest.cs" />
+    <Compile Include="pages\creditApplications.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="pages\mainMenuFlorida.cs" />
+    <Compile Include="pages\NWFCreditRequestcs.cs" />
+    <Compile Include="pages\CKYCreditRequestcs.cs" />
+    <Compile Include="pages\YANCreditRequestcs.cs" />
+    <Compile Include="pages\mainMenu.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="testscripts\ACH\TC13_ACH_creditRequestClosingBookandFunding - Copy.cs" />
+    <Compile Include="testscripts\ACH\TC14_ACH_creditRequestClosingFinalpostcloseChecklist.cs" />
+    <Compile Include="testscripts\ACH\TC15_ACH_creditRequestClosingFinalCreditRequestActions.cs" />
+    <Compile Include="testscripts\ACH_Happy_Path_Test.cs" />
+    <Compile Include="testscripts\BASE_CREDIT_REQUEST.cs" />
+    <Compile Include="testscripts\AGC_Happy_Path_Test.cs" />
+    <Compile Include="testscripts\NWF\TC02_NWF_initialInquiryLoanAction.cs" />
+    <Compile Include="testscripts\NWF\TC03_NWF_initialInquiryInquiry.cs" />
+    <Compile Include="testscripts\NWF\TC04_NWF_buidApplicationEditNewLoanActions.cs" />
+    <Compile Include="testscripts\CKY\TC06_CKY_buildApplicationApplications.cs" />
+    <Compile Include="testscripts\CKY\TC07_CKY_buildLoanPackageLoanActions.cs" />
+    <Compile Include="testscripts\CKY\TC08_CKY_analyzeCreditRequestAssignCreditAnalyst.cs" />
+    <Compile Include="testscripts\CKY\TC09_CKY_preDecisionReview.cs" />
+    <Compile Include="testscripts\CKY\TC10_CKY_reassignApprover.cs" />
+    <Compile Include="testscripts\CKY\TC11_CKY_decisionApproverDecision.cs" />
+    <Compile Include="testscripts\CKY\TC12_CKY_clearFileForClosing.cs" />
+    <Compile Include="testscripts\CKY\TC13_CKY_prepareDocuments.cs" />
+    <Compile Include="testscripts\CKY\TC14_CKY_receiveandReviewDocuments.cs" />
+    <Compile Include="testscripts\CKY\TC15_CKY_crClosingActions_BookingandFunding.cs" />
+    <Compile Include="testscripts\CKY\TC16_CKY_nextDayVerification.cs" />
+    <Compile Include="testscripts\CKY\TC17_CKY_postCloseChecklist.cs" />
+    <Compile Include="testscripts\CKY\TC18_CKY_finalCreditRequestActions.cs" />
+    <Compile Include="testscripts\FCF_Happy_Path_Test.cs" />
+    <Compile Include="testscripts\ACH\TC01_ACH_initialInquiryApplicant.cs" />
+    <Compile Include="testscripts\AGC\TC01_AGC_initialInquiryApplicant.cs" />
+    <Compile Include="testscripts\FCF\TC01_FLORIDA_initialInquiryApplicant.cs" />
+    <Compile Include="testscripts\ACH\TC02_ACH_initialInquiryLoanAction.cs" />
+    <Compile Include="testscripts\FCF\TC02_FLORIDA_initailInquiryApplicantWhollyOutsideTerritorialConcurrence.cs" />
+    <Compile Include="testscripts\AGC\TC02_AGC_initialInquiryLoanAction.cs" />
+    <Compile Include="testscripts\ACH\TC03_ACH_initialInquiryInquiry.cs" />
+    <Compile Include="testscripts\FCF\TC03_FLORIDA_initialInquiryLoanAction.cs" />
+    <Compile Include="testscripts\AGC\TC03_AGC_initialInquiryInquiry.cs" />
+    <Compile Include="testscripts\ACH\TC05_ACH_buildLoanPackageEditNewLoanActions.cs" />
+    <Compile Include="testscripts\FCF\TC04_FLORIDA_initialInquiryInquiry.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC04_initailInquiryCalculatorsCalculateEligibility.cs" />
+    <Compile Include="testscripts\AGC\TC04_AGC_buildApplicationEditNewLoanActions.cs" />
+    <Compile Include="testscripts\ACH\TC04_ACH_buildApplicationApplications.cs" />
+    <Compile Include="testscripts\FCF\TC05_FLORIDA_buildApplicationEditNewLoanActions.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC05_initialInquiryCalculatorsLiteAnalysisCalculator.cs" />
+    <Compile Include="testscripts\AGC\TC05_AGC_buildApplicationApplications.cs" />
+    <Compile Include="testscripts\FCF\TC06_FLORIDA_buildApplicationApplications.cs" />
+    <Compile Include="testscripts\AGC\TC06_AGC_buildLoanPackageLoanActions.cs" />
+    <Compile Include="testscripts\ACH\TC06_ACH_analyzeCreditRequestAssignCreditAnalyst.cs" />
+    <Compile Include="testscripts\FCF\TC07_FLORIDA_buildLoanPackageLoanActions.cs" />
+    <Compile Include="testscripts\NWF\TC01_NWF_initialInquiryApplicant.cs" />
+    <Compile Include="testscripts\CKY\TC01_CKY_initialInquiryApplicant.cs" />
+    <Compile Include="testscripts\CKY\TC02_CKY_initialInquiryLoanAction.cs" />
+    <Compile Include="testscripts\CKY\TC03_CKY_initialInquiryInquiry.cs" />
+    <Compile Include="testscripts\CKY\TC04_CKY_buidApplicationEditNewLoanActions.cs" />
+    <Compile Include="testscripts\CKY\TC05_CKY_buildApplicationLoanActions.cs" />
+    <Compile Include="testscripts\NWF\TC05_NWF_buildApplicationApplications.cs" />
+    <Compile Include="testscripts\NWF\TC06_NWF_buildLoanPackageLoanActions.cs" />
+    <Compile Include="testscripts\NWF\TC08_NWF_analyzeCreditRequestCreditAnalysis.cs" />
+    <Compile Include="testscripts\NWF\TC07_NWF_analyzeCreditRequestAssignCreditAnalyst.cs" />
+    <Compile Include="testscripts\NWF\TC09_NWF_preDecisionReview.cs" />
+    <Compile Include="testscripts\NWF\TC10_NWF_decisionPrep.cs" />
+    <Compile Include="testscripts\NWF\TC11_NWF_decisionLoanActionApprove.cs" />
+    <Compile Include="testscripts\NWF\TC12_NWF_clearFileForClosing.cs" />
+    <Compile Include="testscripts\NWF\TC13_NWF_prepareDocuments.cs" />
+    <Compile Include="testscripts\NWF\TC14_NWF_reviewDocuments.cs" />
+    <Compile Include="testscripts\NWF\TC15_NWF_creditRequestClosingPrintAndSendDocs.cs" />
+    <Compile Include="testscripts\NWF\TC24_NWF_finalCreditRequestActions.cs" />
+    <Compile Include="testscripts\NWF\TC23_NWF_postAuditClose.cs" />
+    <Compile Include="testscripts\NWF\TC22_NWF_receiveAndScanDocuments.cs" />
+    <Compile Include="testscripts\NWF\TC21_NWF_nextDayVerification.cs" />
+    <Compile Include="testscripts\NWF\TC20_NWF_reviewAndFundingLoan.cs" />
+    <Compile Include="testscripts\NWF\TC19_NWF_createFundingRequest.cs" />
+    <Compile Include="testscripts\NWF\TC18_NWF_reviewAndBookLoan.cs" />
+    <Compile Include="testscripts\NWF\TC17_NWF_recievedBooking.cs" />
+    <Compile Include="testscripts\NWF\TC16_NWF_recieveDocuments.cs" />
+    <Compile Include="testscripts\YAN\TC07_YAN_analyzeCreditRequestAssignCreditAnalysis.cs" />
+    <Compile Include="testscripts\AGC\TC07_AGC_analyzeCreditRequestAssignCreditAnalyst.cs" />
+    <Compile Include="testscripts\FCF\TC08_FLORIDA_analyzeCreditRequestAssignCreditAnalyst.cs" />
+    <Compile Include="testscripts\YAN\TC08_YAN_decisionPreDecisionReview.cs" />
+    <Compile Include="testscripts\AGC\TC08_AGC_analyzeCreditRequestAcceptCreditRequest.cs" />
+    <Compile Include="testscripts\ACH\TC07_ACH_acceptCreditRequest.cs" />
+    <Compile Include="testscripts\ACH\TC08_ACH_analyzeCreditRequestCreditAnalysis.cs" />
+    <Compile Include="testscripts\FCF\TC09_FLORIDA_analyzeCreditRequestAcceptCreditRequest.cs" />
+    <Compile Include="testscripts\YAN\TC09_YAN_reassignApprover.cs" />
+    <Compile Include="testscripts\AGC\TC09_AGC_analyzeCreditRequestCreditAnalysis.cs" />
+    <Compile Include="testscripts\ACH\TC09_ACH_decisionsPreDecisionReview.cs" />
+    <Compile Include="testscripts\ACH\TC11_ACH_creditRequestClosingAcceptLnActions.cs" />
+    <Compile Include="testscripts\FCF\TC10_FLORIDA_analyzeCreditRequestCreditAnalysis.cs" />
+    <Compile Include="testscripts\YAN\TC10_YAN_decisionApproverDecision.cs" />
+    <Compile Include="testscripts\AGC\TC10_AGC_decisionsPreDecisionReview.cs" />
+    <Compile Include="testscripts\ACH\TC10_ACH_decisionsApproverDecisionApprove.cs" />
+    <Compile Include="testscripts\FCF\TC11_FLORIDA_decisionsPreDecisionReview.cs" />
+    <Compile Include="testscripts\YAN\TC11_YAN_clearFileForClosing.cs" />
+    <Compile Include="testscripts\AGC\TC11_AGC_decisionsApproverDecisionApprove.cs" />
+    <Compile Include="testscripts\ACH\TC12_ACH_creditRequestClosingprepareDocuments.cs" />
+    <Compile Include="testscripts\FCF\TC12_FLORIDA_decisionsApproverDecisionApprove.cs" />
+    <Compile Include="testscripts\AGC\TC12_AGC_creditRequestClosingprepareDocuments.cs" />
+    <Compile Include="testscripts\YAN\TC12_YAN_prepareDocuments.cs" />
+    <Compile Include="testscripts\FCF\TC13_FLORIDA_creditRequestClosingAcceptLnActions.cs" />
+    <Compile Include="testscripts\YAN\TC13_YAN_creditRequestClosingReviewDcuments.cs" />
+    <Compile Include="testscripts\AGC\TC13_AGC_creditRequestClosingReviewDocuments.cs" />
+    <Compile Include="testscripts\FCF\TC14_FLORIDA_creditRequestClosingPrintDocuments.cs" />
+    <Compile Include="testscripts\YAN\TC14_YAN_creditRequestClosingPrintAndSendDocs.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC15_analyzeCreditRequestAssignCreditAnalyst.cs" />
+    <Compile Include="testscripts\AGC\TC14_AGC_creditRequestClosingReceiveSignedDocs.cs" />
+    <Compile Include="testscripts\FCF\TC15_FLORIDA_creditRequestClosingReceiveSignedDocs.cs" />
+    <Compile Include="testscripts\YAN\TC15_YAN_recieveSignedDocsAndSendForBooking.cs" />
+    <Compile Include="testscripts\AGC\TC21_AGC_creditRequestClosingFinalCreditRequestActions.cs" />
+    <Compile Include="testscripts\AGC\TC20_AGC_creditRequestClosingPostCloseChecklistReview.cs" />
+    <Compile Include="testscripts\AGC\TC19_AGC_creditRequestClosingScanOrigDocs.cs" />
+    <Compile Include="testscripts\AGC\TC18_AGC_creditRequestClosingLoanVerification.cs" />
+    <Compile Include="testscripts\AGC\TC17_AGC_creditRequestClosingCollateral.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC16_analyzeCreditRequestAcceptCreditRequest.cs" />
+    <Compile Include="testscripts\AGC\TC15_AGC_creditRequestClosingBookLoan.cs" />
+    <Compile Include="testscripts\FCF\TC16_FLORIDA_creditRequestClosingReviewedandBooked.cs" />
+    <Compile Include="testscripts\YAN\TC16_YAN_reviewAndBookLoan.cs" />
+    <Compile Include="testscripts\FCF\TC17_FLORIDA_creditRequestClosingPostCloseTasks.cs" />
+    <Compile Include="testscripts\YAN\TC17_YAN_nextDayVerification.cs" />
+    <Compile Include="testscripts\AGC\TC16_AGC_creditRequestClosingLoanSecurityActions.cs" />
+    <Compile Include="testscripts\FCF\TC18_FLORIDA_creditRequestClosingFinalCreditRequestActions.cs" />
+    <Compile Include="testscripts\YAN\TC18_YAN_postCloseChecklist.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC19_analyzeCreditRequestCreditAnalysis.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC18_analyzeCreditRequestDocuments.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC17_analyzeCreditRequestEventSendNoticeOfIncomplete.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC13_buildLoanPackageConditions.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC14_buildLoanPackageDocuments.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC12_buildLoanPackageExceptions.cs" />
+    <Compile Include="testscripts\YAN\TC19_YAN_finalCreditRequestActions.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC25_creditRequestClosingBookingAndFunding.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC27_creditRequestClosingFinalCreditRequestActions.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC26_creditRequestClosingPostCloseChecklist.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC24_creditRequestClosingReceiveCompletedDocuments.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC23_creditRequestClosingSubmitLoanToCDPreCloseChecklist.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC21_decisionApproverDecisionDeny.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC22_decisionsApproverDecisionApproveWithConditions.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC20_decisionsPreDecisionReview.cs" />
+    <Compile Include="testscripts\BaseCreditRequest\TC08_buildApplicationApplications.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC07_buildApplicationEditNewLoanActions.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC09_buildLoanPackageLoanActions.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC11_buildLoanPackageNarrative.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC10_buildLoanPackageTotalLiability.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC02_initailInquiryApplicantWhollyOutsideTerritorialConcurrence.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC01_initialInquiryApplicant.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC06_initialInquiryInquiry.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\BaseCreditRequest\TC03_initialInquiryLoanAction.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="testscripts\YAN\TC01_YAN_initialInquiryApplicant.cs" />
+    <Compile Include="testscripts\YAN\TC02_YAN_initialInquiryLoanAction.cs" />
+    <Compile Include="testscripts\YAN\TC03_YAN_initialInquiryInquiry.cs" />
+    <Compile Include="testscripts\YAN\TC04_YAN_buidApplicationEditNewLoanActions.cs" />
+    <Compile Include="testscripts\YAN\TC05_YAN_buildApplicationApplications.cs" />
+    <Compile Include="testscripts\YAN\TC06_YAN_buildLoanPackageLoanActions.cs" />
+    <Compile Include="testscripts\NWF_Happy_Path_Test.cs" />
+    <Compile Include="testscripts\CKY_Happy_Path_Test.cs" />
+    <Compile Include="testscripts\YAN_Happy_Path_Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="config\AppSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config\testSuite.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="testdata\testData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="testresult\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\canvasjs.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.14\build\Selenium.InternetExplorer.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.InternetExplorer.WebDriver.3.14\build\Selenium.InternetExplorer.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.22.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.22.0\build\Selenium.Firefox.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.42\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.42\build\Selenium.Chrome.WebDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.InternetExplorer.WebDriver.3.14\build\Selenium.InternetExplorer.WebDriver.targets" Condition="Exists('..\packages\Selenium.InternetExplorer.WebDriver.3.14\build\Selenium.InternetExplorer.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.Firefox.WebDriver.0.22.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.22.0\build\Selenium.Firefox.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.42\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.42\build\Selenium.Chrome.WebDriver.targets')" />
+</Project>
