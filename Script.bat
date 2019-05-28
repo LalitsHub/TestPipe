@@ -1,0 +1,1 @@
+C:\Automation\NUnit.org\nunit-console\nunit3-console.exe C:\Automation\AgVueAutomation\AgVueAutomation\bin\Debug\AgVueAutomation.exe

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="1" result="Failed" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.8.0.0" clr-version="4.0.30319.42000" start-time="2019-05-28 10:33:21Z" end-time="2019-05-28 10:34:14Z" duration="53.614568">
+  <command-line><![CDATA[nunit3-console.exe  C:\Automation\AgVueAutomation\AgVueAutomation\bin\Debug\AgVueAutomation.exe]]></command-line>
+  <test-suite type="Assembly" id="0-1002" name="AgVueAutomation.exe" fullname="C:\Automation\AgVueAutomation\AgVueAutomation\bin\Debug\AgVueAutomation.exe" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2019-05-28 10:33:22Z" end-time="2019-05-28 10:34:14Z" duration="52.410230" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.10.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601.65536" platform="Win32NT" cwd="C:\Automation\NUnit.org\nunit-console" machine-name="AGF-BPSPN44-VWS" user="p3wli" user-domain="AGFIRST" culture="en-US" uiculture="en-US" os-architecture="x86" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\Automation\NUnit.org\nunit-console" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.6.1" />
+      <setting name="ImageRequiresX86" value="True" />
+      <setting name="RunAsX86" value="True" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="2" />
+    </settings>
+    <properties>
+      <property name="_PID" value="12132" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="0-1003" name="AgVueAutomation" fullname="AgVueAutomation" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2019-05-28 10:33:22Z" end-time="2019-05-28 10:34:14Z" duration="52.389629" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="0-1000" name="driverscript" fullname="AgVueAutomation.driverscript" classname="AgVueAutomation.driverscript" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2019-05-28 10:33:22Z" end-time="2019-05-28 10:34:14Z" duration="52.386155" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="0-1001" name="Executetest" fullname="AgVueAutomation.driverscript.Executetest" methodname="Executetest" classname="AgVueAutomation.driverscript" runstate="Runnable" seed="872577000" result="Failed" label="Error" start-time="2019-05-28 10:33:22Z" end-time="2019-05-28 10:34:14Z" duration="52.370493" asserts="0">
+          <failure>
+            <message><![CDATA[System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----> System.TypeInitializationException : The type initializer for 'AgVueAutomation.pages.mainMenu' threw an exception.
+  ----> OpenQA.Selenium.NoSuchElementException : Unable to find element with xpath == .//*[@id='menuListInbox']/a]]></message>
+            <stack-trace><![CDATA[   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args)
+   at AgVueAutomation.lib.generalLib.InvokeStringMethod(String assemblyName, String namespaceName, String className, String methodName) in C:\Lalit\AgVueAutomation - NWF\AgVueAutomation\lib\generalLib.cs:line 349
+   at AgVueAutomation.driverscript.Executetest() in C:\Lalit\AgVueAutomation - NWF\AgVueAutomation\driverscript.cs:line 31
+--TypeInitializationException
+   at AgVueAutomation.pages.mainMenu.selectMenuNWF(String menuOption1, String menuOption2, String menuOption3)
+   at AgVueAutomation.testscripts.NWF.TC01_NWF_initialInquiryApplicant.testscript() in C:\Lalit\AgVueAutomation - NWF\AgVueAutomation\testscripts\NWF\TC01_NWF_initialInquiryApplicant.cs:line 64
+   at AgVueAutomation.testscripts.NWF_Happy_Path_Test.testscript() in C:\Lalit\AgVueAutomation - NWF\AgVueAutomation\testscripts\NWF_Happy_Path_Test.cs:line 16
+--NoSuchElementException
+   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)
+   at OpenQA.Selenium.By.<>c__DisplayClass19_0.<XPath>b__0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at AgVueAutomation.pages.mainMenu..cctor() in C:\Lalit\AgVueAutomation - NWF\AgVueAutomation\pages\mainMenu.cs:line 13]]></stack-trace>
+          </failure>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
